@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Password Generate</title>
+  </head>
+  <body>
+    <!-- Container -->
+    <div
+      class="w-screen h-auto sm:h-screen flex justify-center items-center bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 selection:bg-indigo-500 py-10"
+    >
+      <!-- Container Rectangle -->
+      <div
+        class="w-[400px] h-[700px] py-5 flex justify-center items-center flex-col bg-transparent md:border md:border-indigo-400 md:rounded-lg"
+      >
+        <!-- Title and explain app -->
+        <div class="p-10 gap-5 flex flex-col">
+          <h1 class="text-gray-200 text-center text-2xl font-bold">
+            Password Generate
+          </h1>
+          <p class="text-gray-200 text-center text-white">
+            Welcome to Password Generate, you can generate difficult passwords
+            for your social media. You can choose if you want numbers, letters
+            and symbols.
+          </p>
+        </div>
+
+        <!-- Input and checkbox -->
+        <div class="block">
+          <div class="grid grid-cols-3 h-1 w-full pr-[86px] pl-1">
+            <div class="bg-orange-500 hidden" id="barra1"></div>
+            <div class="bg-yellow-500 hidden" id="barra2"></div>
+            <div class="bg-green-500 hidden" id="barra3"></div>
+          </div>
+
+          <div class="flex flex-row gap-2">
+            <!-- Input where you can see the Password-->
+            <input
+              type="text"
+              class="w-60 h-12 text-center outline-none"
+              id="inputText"
+              placeholder="Click in button"
+            />
+
+            <!--Button Copy-->
+            <button
+              class="border border-violet-400 px-5 text-white font-bold"
+              id="btnCopy"
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+
+        <!-- Popup Modal Container -->
+        <!--when you copy the password your can see a modal-->
+        <div id="popupModal" class="modal hidden">
+          <div class="modal-content">
+            <span class="close" onclick="closePopupModal()">×</span>
+            <p class="text-lime-400">Password copied!</p>
+          </div>
+        </div>
+
+        <!-- Checkbox -->
+        <!-- Select if you want Letter, Number and Symbol-->
+        <div>
+          <legend class="text-center text-xl py-5 text-white">
+            Elements in your password.
+          </legend>
+
+          <input
+            id="checkbox1"
+            class="peer/checkbox1 px-2 accent-violet-500"
+            type="checkbox"
+            name="status"
+          />
+          <label
+            for="checkbox1"
+            class="peer-checked/checkbox1:text-white px-2 text-white"
+            >Letter</label
+          >
+
+          <input
+            id="chechbox2"
+            class="peer/chechbox2 px-2 accent-violet-500"
+            type="checkbox"
+            name="status"
+          />
+          <label
+            for="chechbox2"
+            class="peer-checked/chechbox2:text-white px-2 text-white"
+            >Number</label
+          >
+
+          <input
+            id="checkbox3"
+            class="peer/checkbox3 px-2 accent-violet-500"
+            type="checkbox"
+            name="status"
+          />
+          <label
+            for="checkbox3"
+            class="peer-checked/checkbox3:text-white px-2 text-white"
+            >Symbol</label
+          >
+        </div>
+
+        <!-- Password Size-->
+        <!-- Choose your size -->
+        <div>
+          <fieldset>
+            <legend class="text-center text-xl py-5 text-white">
+              Choose Size
+            </legend>
+
+            <input
+              id="radio6"
+              class="peer/radio6 px-2 accent-violet-500"
+              type="radio"
+              name="status"
+            />
+            <label
+              for="radio6"
+              class="peer-checked/radio6:text-white px-2 text-white"
+              >6</label
+            >
+
+            <input
+              id="radio8"
+              class="peer/radio8 px-2 accent-violet-500"
+              type="radio"
+              name="status"
+            />
+            <label
+              for="radio8"
+              class="peer-checked/radio8:text-white px-2 text-white"
+              >8</label
+            >
+
+            <input
+              id="radio10"
+              class="peer/radio10 px-2 accent-violet-500"
+              type="radio"
+              name="status"
+            />
+            <label
+              for="radio10"
+              class="peer-checked/radio10:text-white px-2 text-white"
+              >10</label
+            >
+
+            <input
+              id="radio12"
+              class="peer/radio12 px-2 accent-violet-500"
+              type="radio"
+              name="status"
+            />
+            <label
+              for="radio12"
+              class="peer-checked/radio12:text-white px-2 text-white"
+              >12</label
+            >
+
+            <div
+              class="hidden peer-checked/radio6:block text-white pt-1 text-center"
+            >
+              Your size is 6.
+            </div>
+            <div
+              class="hidden peer-checked/radio8:block text-white pt-1 text-center"
+            >
+              Your size is 8.
+            </div>
+            <div
+              class="hidden peer-checked/radio10:block text-white pt-1 text-center"
+            >
+              Your size is 10.
+            </div>
+            <div
+              class="hidden peer-checked/radio12:block text-white pt-1 text-center"
+            >
+              Your size is 12.
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Button -->
+        <div class="pt-4">
+          <button
+            id="btnGenerate"
+            class="text-white border-2 border-indigo-500 focus:outline-none rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 font-bold"
+          >
+            Password Generate
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
